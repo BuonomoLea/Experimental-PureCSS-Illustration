@@ -1,0 +1,339 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+body {
+    height: 100vh;
+    position: relative;
+    color: inherit;
+}
+li, a {
+    list-style: none;
+    text-decoration: none;
+}
+.pointer {
+    cursor: pointer;
+}
+.grap {
+    cursor: grab;
+}
+template {
+    display: flex;
+    /* width: 100%;
+    height: 100%; */
+    align-items: center;
+}
+
+/* CLAVIER MIDI */
+.midi-keyboard {
+    width: 360px;
+    height: 250px;
+    display: grid;
+    grid:
+        "keyboard-top" 35%
+        "keys-section" 65% 
+        / 1fr;
+    background: linear-gradient(145deg, #1a1a1a, #242424);
+    box-shadow: 0px 0px 4px rgb(20, 20, 20, 0.3), -0px -0px 4px rgb(42, 42, 42, 0.3);
+    /* background: #1e1e1e; */
+    color: #fff;    
+    border-radius: 12px;
+    border-bottom: 2px solid #000;
+    padding: 1rem;
+}
+
+/* BANDEAU SUPÉRIEUR */
+.keyboard-top, .keys-section {
+    width: calc(450px - 2rem);
+    height: 100%; 
+}
+.keyboard-top {
+    grid-area: keyboard-top;
+    width: 90%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(6, auto);
+}
+/* SECTION CLAVIER */
+.keys-section {
+    grid-area: keys-section;
+    position: relative;
+    height: 100%;
+    width: 90%;
+    background: #222;
+    border-radius: 8px;
+    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top: 1px solid #000;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #222;
+}
+/* Boutons ronds */
+.top-round-buttons {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+    height: 50%;
+    width: 10%;
+    gap: .4rem;
+}
+.round-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #555;
+    border: 2px solid #171717;
+    background: radial-gradient(circle at 30% 30%, #777, #444);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+.round-btn:active {
+    transform: scale(0.9);
+}
+.round-btn:hover {
+  background: radial-gradient(circle at 30% 30%, #555, #333);
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.25), inset -1px -1px 2px rgba(255, 255, 255, 0.3), inset 1px 1px 2px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.4), 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px) scale(0.98);
+}
+/* Faders */
+.keyboard-faders {
+    display: flex;
+}
+.fader {
+    width: 20px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fader-track {
+    width: 6px;
+    height: 100%;
+    border-radius: 4px;
+    background: #333;
+    position: relative;
+    background: linear-gradient(to bottom, #2a2a2a, #111);
+    box-shadow: inset 2px 2px 5px #000, inset -2px -2px 5px #444;
+}
+.fader-handle {
+    width: 14px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 5px;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 2px 2px 3px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+}
+.fader-handle:hover {
+    top: 48%;
+}
+/* Écran + boutons */
+.screen-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 75px;
+}
+.screen {
+    width: 100px;
+    height: 55px;
+    background: #0f0;
+    border: 2px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.screen-content {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.screen {
+    background: linear-gradient(145deg, rgba(17, 170, 17, 0.4), rgba(0, 204, 0, 0.4));
+    box-shadow: inset 2px 2px 6px #020, inset -2px -2px 6px rgba(17, 204, 17, 0.4), 2px 2px 6px #020;
+}
+.screen-content {
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.2) 0px,
+        rgba(0,0,0,0.2) 2px,
+        transparent 3px,
+        transparent 6px
+    );
+}
+
+.mini-grid-left,
+.mini-grid-right {
+    gap: 0.3rem;
+}
+.mini-grid-left {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    height: max-content;
+    width: max-content;
+}
+.mini-grid-right {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem;
+    height: max-content;
+    width: max-content;
+}
+.mini-btn {
+    width: 16px;
+    height: 16px;
+    background: #666;
+    border: 1px solid #1a1a1a;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #777, #444);    
+}
+.mini-btn:hover {
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -2px -2px 2px rgba(0, 0, 0, 0.4), inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.mini-grid-right .mini-btn {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(145deg, #757171, #333);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.mini-grid-right .mini-btn:hover {
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -2px -2px 2px rgba(0, 0, 0, 0.4), inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Encodeur + texte */
+.encoder-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    height: max-content;
+    width: max-content;
+    gap: 0.5rem;
+}
+.encoder-knob {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #888;
+    cursor: pointer;
+    background-color: #888;
+    border-radius: 50%;
+    border: none;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);        
+}
+.encoder-knob:hover, .encoder-svg:hover {
+    transform: rotate(4deg);
+}
+    .encoder-svg {
+        position: absolute;
+    }
+/* Voyant + bouton rectangulaire */
+.status-controls {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1px;
+}
+.btn-power {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: max-content;
+}
+.tiny-led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    background: radial-gradient(circle at 30% 30%, red, darkred);
+    box-shadow: 0 0 6px red;
+}
+.rect-btn {
+    width: 20px;
+    height: 10px;
+    background: #666;
+    border: 1px solid #999;
+    cursor: pointer;
+    border: 2px solid #232323;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.rect-btn:hover {
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -2px -2px 2px rgba(0, 0, 0, 0.4), inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+/* Touches blanches */
+.white-keys {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+}
+.white-key {
+    width: 40px;
+    height: 100px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.white-key:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 4px rgba(255, 255, 255, 0.3), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -1px -1px 4px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.4), 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+/* Touches noires */
+.black-keys {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    width: 92%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+}
+.black-keys-left, .black-keys-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 25%;
+}
+.black-key {
+    width: 24px;
+    height: 60px;
+    background: #000;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #1a1a1a;
+    border-bottom: 1.5px solid #606060;
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1), inset 1px 1px 2px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid #707070;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.black-key:hover {
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}

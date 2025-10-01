@@ -1,0 +1,350 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+body {
+    height: 100vh;
+    position: relative;
+    color: inherit;
+}
+li, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --pad-red: #e74c3c;
+    --pad-orange: #e67e22;
+    --pad-yellow: #f1c40f;
+    --pad-green: #2ecc71;
+    --pad-pink: #ff69b4;
+    --pad-purple: #9b59b6;
+    --pad-blue: #3498db;
+    --pad-cyan: #1abc9c;
+}
+.pointer {
+    cursor: pointer;
+}
+template {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+
+
+.pad-controller {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    min-height: max-content;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-right: 2px solid #333;
+    padding: 0.5rem;
+    border-radius: .4rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+/* Bord supérieur */
+.top-edge {
+    position: absolute;
+    top: -3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -2;
+}
+.top-edge-left {
+  display: flex;
+  gap: 8px;
+}
+.edge-btn {
+    width: 12px;
+    height: 8px;
+    background-color: #222;
+    border-radius: 5px;
+    border: none;
+}
+.edge-btn:nth-of-type(2) {
+    width: 30px;
+}
+
+
+
+/* bouton de volume a modifier */
+.jack-connector {
+    width: 20px;
+    height: 20px;
+    background-color: #222;
+    border-radius: 50%;
+}
+
+/* Corps principal */
+.device-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Pads colorés */
+.pads-section {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 70% 30%;
+}
+
+
+.pads-wrapper {
+    width: 120px;
+    height: 60px;
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(4, 25%);
+}
+.pad {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* pad clicked & hover */
+.pad-red.active, .pad-red:hover { 
+    background-color: #e74c3c;
+    box-shadow: 0 0 5px #e74c3c, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-orange.active, .pad-orange:hover { 
+    background-color: #e67e22;
+    box-shadow: 0 0 5px #e67e22, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-yellow.active, .pad-yellow:hover { 
+    background-color: #f1c40f;
+    box-shadow: 0 0 5px #f1c40f, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-green.active, .pad-green:hover { 
+    background-color: #2ecc71;
+    box-shadow: 0 0 5px #2ecc71, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-pink.active, .pad-pink:hover { 
+    background-color: #ff69b4;
+    box-shadow: 0 0 5px #ff69b4, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-purple.active, .pad-purple:hover { 
+    background-color: #b472d0;
+    box-shadow: 0 0 5px #a489af, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-blue.active, .pad-blue:hover { 
+    background-color: #3498db;
+    box-shadow: 0 0 5px #3498db, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.pad-cyan.active, .pad-cyan:hover { 
+    background-color: #20c4a4;
+    box-shadow: 0 0 5px #1abc9c, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+
+.pad-red { background-color: #c33e30; }
+.pad-orange { background-color: #cc7223; }
+.pad-yellow { background-color: #d3ad12; }
+.pad-green { background-color: #29af62; }
+.pad-pink { background-color: #c04a85; }
+.pad-purple { background-color: #804a96; }
+.pad-blue { background-color: #3179aa; }
+.pad-cyan { background-color: #1b977f; }
+
+/* Boutons de navigation */
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.nav-buttons .nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: max-content;
+    gap: 6px;
+}
+
+.nav-btn {
+    width: 22px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 6px;
+    border: none;
+    border-right: 2px solid #111;
+    border-bottom: 2px solid #111;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.nav-btn, .tiny-switch, .edge-btn {
+    transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.nav-btn.active, .nav-btn:hover, .tiny-switch.active , .tiny-switch:hover, .side-small.active, .side-small:hover {
+    box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.3), inset -1px -1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+/* Contrôles latéraux */
+.side-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 12px;
+}
+
+.side-small-buttons {
+    display: flex;    
+    flex-direction: row;
+    gap: 6px;
+    justify-content: flex-end;
+}
+
+.side-encoder {
+    position: relative;
+    align-self: flex-end;
+    transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.side-encoder:hover {
+    transform: rotate(4deg);
+}
+    .encoder-svg {
+        position: absolute;
+    }
+
+.side-small {
+    width: 20px;
+    height: 20px;
+    background-color: #666;
+    border-radius: 4px;
+    border: none;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.encoder-knob {
+    width: 30px;
+    height: 30px;
+    background-color: #888;
+    border-radius: 50%;
+    border: none;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.container-faders-buttons {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 70% 30%;
+}
+/* Faders */
+.faders-section .faders-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.fader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25px;
+    padding-left: 2%;
+}
+
+.fader-track {
+    width: 8px;
+    height: 80px;
+    border-radius: 4px;
+    background-color: #333;
+    position: relative;
+    background: linear-gradient(to bottom, #2a2a2a, #111);
+    box-shadow: inset 2px 2px 5px #000, inset -2px -2px 5px #444;
+}
+
+.fader-handle {
+    width: 16px;
+    height: 10px;
+    background-color: #888;
+    border-radius: 50px;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.fader-handle:hover {
+    top: 48%;
+}
+/* Bas de l'appareil */
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottom-right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 50px;
+}
+.large-rect-btn {
+    font-family: "Silkscreen", sans-serif;
+    color: #c33e30;
+    font-size: .5rem;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(0, 0, 0, 0.2), inset 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+.large-rect-btn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: #c33e30;
+    width: 100%;
+    height: 20%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+.status-mini {
+    display: flex;
+    gap: 4px;
+}
+
+.mini-led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.mini-led-red { 
+    background-color: #e74c3c;
+    box-shadow: 0 0 5px #e74c3c, inset 0 0 2px rgba(255, 255, 255, 0.05);
+}
+.mini-led-grey { 
+    border: 2px solid grey;
+    background-color: #000000;
+}
+
+.tiny-switch {
+    width: 20px;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    margin-top: 4px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+

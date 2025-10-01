@@ -1,0 +1,106 @@
+<template id="clavier-template">
+  <!-- CLAVIER MIDI -->
+  <div class="midi-keyboard" id="midi-keyboard" role="application" aria-label="Clavier MIDI">
+
+    <!-- BANDEAU SUPÉRIEUR -->
+    <div class="keyboard-top" role="contentinfo" aria-label="Partie supérieure">
+
+      <!-- Boutons ronds (gauche) -->
+      <div class="top-round-buttons" role="group" aria-label="Boutons supérieurs gauche">
+        <button type="button" class="round-btn pointer" data-btn="1" aria-label="Bouton rond 1"></button>
+        <button type="button" class="round-btn pointer" data-btn="2" aria-label="Bouton rond 2"></button>
+        <button type="button" class="round-btn pointer" data-btn="3" aria-label="Bouton rond 3"></button>
+        <button type="button" class="round-btn pointer" data-btn="4" aria-label="Bouton rond 4"></button>
+      </div>
+
+      <!-- Faders (3) -->
+      <div class="keyboard-faders" role="group" aria-label="Faders du clavier">
+        <div class="fader" data-fader="1">
+          <div class="fader-track">
+            <div class="fader-handle grap" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Fader 1"></div>
+          </div>
+        </div>
+        <div class="fader" data-fader="2">
+          <div class="fader-track">
+            <div class="fader-handle grap" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Fader 2"></div>
+          </div>
+        </div>
+        <div class="fader" data-fader="3">
+          <div class="fader-track">
+            <div class="fader-handle grap" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Fader 3"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contrôles écran -->
+        <div class="mini-grid-left" role="group" aria-label="Boutons gauche écran">
+          <button type="button" class="mini-btn pointer" aria-label="bouton 1" data-screen-left="1"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 2" data-screen-left="2"></button>
+        </div>
+
+      <!-- Écran -->
+      <div class="screen-section" role="region" aria-label="Écran et contrôles">
+        <div class="screen" role="region" aria-label="Écran LCD">
+          <div class="screen-content" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Encodeur + afficheur texte -->
+      <div class="encoder-section" role="group" aria-label="Contrôles encodeur">
+        <svg class="encoder-svg pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+          <path d="M 207 18 L 210 18.5 L 210 31.5 L 208 32.5 L 207 18 Z  M 172.5 19 Q 175.5 18.1 174 22.5 L 176 34.5 L 174 33.5 L 171 20.5 L 172.5 19 Z  M 245.5 21 L 247 24.5 L 243.5 36 Q 240.5 36.5 242 29.5 L 243 23.5 L 245.5 21 Z  M 142 28 L 145 29.5 L 148 41.5 L 146 40.5 L 142 28 Z  M 273.5 31 L 276 32.5 L 269.5 45 L 269 41.5 L 273.5 31 Z  M 104.5 42 L 107 43.5 L 114 57.5 L 110 54.5 L 103 43.5 L 104.5 42 Z  M 305.5 48 L 307 51.5 L 300.5 60 L 299 58.5 L 305.5 48 Z  M 75 63 L 81 67.5 L 87 77 L 78 69.5 L 75 63 Z  M 328.5 65 Q 331.5 64.1 330 68.5 L 322.5 77 L 321 74.5 L 328.5 65 Z  M 349.5 90 L 351 92.5 L 341 99 L 347.5 91 L 349.5 90 Z  M 50 91 L 64 100.5 L 62.5 102 L 50 94 L 50 91 Z  M 366.5 118 Q 370.7 116.9 369 121 L 359 125 L 360.5 122 L 366.5 118 Z  M 25.5 133 L 41 140.5 L 38.5 142 L 24 134.5 L 25.5 133 Z  M 378.5 145 Q 383.9 143.1 383 146.5 L 369.5 151 L 371.5 148 L 378.5 145 Z  M 384.5 170 Q 390.8 168.1 389 173 L 375.5 175 L 376.5 173 L 384.5 170 Z  M 15.5 173 L 31 176 Q 32.4 180 25.5 178 L 14 174.5 L 15.5 173 Z  M 380.5 210 L 389.5 210 L 390 213 L 379.5 213 L 378 211.5 L 380.5 210 Z  M 12.5 211 L 29.5 211 L 30 213 L 13.5 214 L 11 212.5 L 12.5 211 Z  M 369 256 L 381 258 Q 382.8 262.5 377.5 261 L 369 258 L 369 256 Z  M 36.5 260 Q 42.4 258.3 41 262 L 24.5 267 Q 21 265 25.5 263 L 36.5 260 Z  M 57.5 297 L 60 297.5 L 45 306 L 47.5 302 L 57.5 297 Z  M 343 304 L 354 310.5 L 351.5 312 L 343 305.5 L 343 304 Z  M 81.5 326 L 84 327.5 L 71 338 L 75.5 331 L 81.5 326 Z  M 308 339 L 314 343.5 L 318 351 L 313 348.5 L 308 339 Z  M 120.5 353 L 122 355.5 L 114 369 Q 110.7 370.3 112 365.5 L 120.5 353 Z  M 266.5 362 L 272 372.5 L 269.5 374 Q 264.7 369.7 266.5 362 Z  M 176 371 Q 179 369.8 178 373.5 L 175 387 Q 170.9 388.7 172 384.5 L 176 371 Z  M 223.5 372 L 225 373.5 L 226 386.5 L 225 389 L 223 387.5 L 223 385.5 L 223.5 372 Z " fill="currentColor"></path>
+        </svg>
+        <button type="button" class="encoder-knob grap" aria-label="Molette encodeur"></button>
+      </div>
+
+      <!-- Voyant + bouton rectangulaire -->
+      <div class="status-controls" role="group" aria-label="Voyants et interrupteurs">
+        <!-- Bouton power -->
+        <div class="btn-power">
+          <div class="tiny-led tiny-led--red" aria-hidden="true"></div>
+          <button type="button" id="rectBtn" class="rect-btn pointer" aria-label="Bouton rectangulaire"></button>
+        </div>
+
+        <!-- Bouton contrôles -->    
+        <div class="mini-grid-right" role="group" aria-label="Boutons droite écran">
+          <button type="button" class="mini-btn pointer" aria-label="bouton 1" data-screen-right="1"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 2" data-screen-right="2"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 3" data-screen-right="3"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 4" data-screen-right="4"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 5" data-screen-right="5"></button>
+          <button type="button" class="mini-btn pointer" aria-label="bouton 6" data-screen-right="6"></button>
+        </div>         
+      </div>
+    </div>
+
+    <!-- SECTION CLAVIER (touches blanches et noires) -->
+    <div class="keys-section" role="region" aria-label="Touches du clavier">
+
+      <!-- Exemple avec 4 blanches et 3 noires -->
+      <div class="white-keys" role="group" aria-label="Touches blanches">
+        <button type="button" class="white-key pointer" data-key="C" aria-label="Do"></button>
+        <button type="button" class="white-key pointer" data-key="D" aria-label="Ré"></button>
+        <button type="button" class="white-key pointer" data-key="E" aria-label="Mi"></button>
+        <button type="button" class="white-key pointer" data-key="F" aria-label="Fa"></button>
+        <button type="button" class="white-key pointer" data-key="G" aria-label="Mi"></button>
+        <button type="button" class="white-key pointer" data-key="A" aria-label="Sol"></button>
+        <button type="button" class="white-key pointer" data-key="B" aria-label="La"></button>
+        <button type="button" class="white-key pointer" data-key="C" aria-label="Do"></button>
+      </div>
+
+      <div class="black-keys" role="group" aria-label="Touches noires">
+        <div class="black-keys-left">
+          <button type="button" class="black-key pointer" data-key="C#" aria-label="Do dièse"></button>
+          <button type="button" class="black-key pointer" data-key="D#" aria-label="Ré dièse"></button>
+        </div>
+        <div class="black-keys-mid">
+          <button type="button" class="black-key pointer" data-key="F#" aria-label="Fa dièse"></button>
+        </div>
+        <div class="black-keys-right">
+          <button type="button" class="black-key pointer" data-key="A#" aria-label="Sol dièse"></button>
+          <button type="button" class="black-key pointer" data-key="B#" aria-label="La dièse"></button>        
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

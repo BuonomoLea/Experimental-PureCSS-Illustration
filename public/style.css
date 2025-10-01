@@ -1,0 +1,35 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: inherit;
+}
+li, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.container-principal {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 35% 65%;
+}
+
+pad-component, clavier-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

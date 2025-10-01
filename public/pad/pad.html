@@ -1,0 +1,143 @@
+<template id="pad-template">
+  <!-- CONTENEUR PRINCIPAL DE L'APPAREIL -->
+  <div class="pad-controller" id="pad-controller" role="application" aria-label="Contrôleur de pads">
+    <!-- BORD HAUT : petits boutons sur la tranche -->
+    <div class="top-edge" role="contentinfo" aria-label="Bord supérieur">
+      <div class="top-edge-left">
+        <button type="button" class="edge-btn edge-btn--1" aria-label="Bouton de tranche 1"></button>
+        <button type="button" class="edge-btn edge-btn--2" aria-label="Bouton de tranche 2"></button>
+      </div>
+    </div>  
+    <!-- CORPS DE L'APPAREIL -->
+    <div class="device-body">
+      <!-- ZONE GAUCHE : PAD COLORÉS (grille 2 x 4) -->
+      <section class="pads-section" aria-label="Pads colorés" role="region">
+        <!-- pad -->
+        <div class="pads-wrapper" aria-label="Grille de 8 pads">
+          <!-- ligne 1 -->
+          <div class="pad-cell">
+            <button type="button" class="pad pad-red" data-pad-index="0" data-pad-color="red" aria-pressed="false" aria-label="Pad rouge"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-orange" data-pad-index="1" data-pad-color="orange" aria-pressed="false" aria-label="Pad orange"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-yellow" data-pad-index="2" data-pad-color="yellow" aria-pressed="false" aria-label="Pad jaune"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-green" data-pad-index="3" data-pad-color="green" aria-pressed="false" aria-label="Pad vert"></button>
+          </div>
+
+          <!-- ligne 2 -->
+
+          <div class="pad-cell">
+            <button type="button" class="pad pad-pink" data-pad-index="4" data-pad-color="pink" aria-pressed="false" aria-label="Pad rose"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-purple" data-pad-index="5" data-pad-color="purple" aria-pressed="false" aria-label="Pad violet"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-blue" data-pad-index="6" data-pad-color="blue" aria-pressed="false" aria-label="Pad bleu"></button>
+          </div>
+          <div class="pad-cell">
+            <button type="button" class="pad pad-cyan" data-pad-index="7" data-pad-color="cyan" aria-pressed="false" aria-label="Pad cyan"></button>
+          </div>
+        </div>
+
+        <!-- ZONE DROITE : BOUTONS VERTICAUX + ENCODER -->
+        <aside class="side-controls" role="complementary" aria-label="Contrôles latéraux">
+          <div class="side-small-buttons" role="group" aria-label="Boutons latéraux">
+            <button type="button" class="side-small pointer" data-side="1" aria-label="Bouton latéral 1"></button>
+            <button type="button" class="side-small pointer" data-side="2" aria-label="Bouton latéral 2"></button>
+            <button type="button" class="side-small pointer" data-side="3" aria-label="Bouton latéral 3"></button>
+          </div>
+
+          <!-- encodeur / grosse molette ronde -->
+          <div class="side-encoder" role="group" aria-label="Encodeur rotatif">
+            <svg class="encoder-svg pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+              <path d="M 207 18 L 210 18.5 L 210 31.5 L 208 32.5 L 207 18 Z  M 172.5 19 Q 175.5 18.1 174 22.5 L 176 34.5 L 174 33.5 L 171 20.5 L 172.5 19 Z  M 245.5 21 L 247 24.5 L 243.5 36 Q 240.5 36.5 242 29.5 L 243 23.5 L 245.5 21 Z  M 142 28 L 145 29.5 L 148 41.5 L 146 40.5 L 142 28 Z  M 273.5 31 L 276 32.5 L 269.5 45 L 269 41.5 L 273.5 31 Z  M 104.5 42 L 107 43.5 L 114 57.5 L 110 54.5 L 103 43.5 L 104.5 42 Z  M 305.5 48 L 307 51.5 L 300.5 60 L 299 58.5 L 305.5 48 Z  M 75 63 L 81 67.5 L 87 77 L 78 69.5 L 75 63 Z  M 328.5 65 Q 331.5 64.1 330 68.5 L 322.5 77 L 321 74.5 L 328.5 65 Z  M 349.5 90 L 351 92.5 L 341 99 L 347.5 91 L 349.5 90 Z  M 50 91 L 64 100.5 L 62.5 102 L 50 94 L 50 91 Z  M 366.5 118 Q 370.7 116.9 369 121 L 359 125 L 360.5 122 L 366.5 118 Z  M 25.5 133 L 41 140.5 L 38.5 142 L 24 134.5 L 25.5 133 Z  M 378.5 145 Q 383.9 143.1 383 146.5 L 369.5 151 L 371.5 148 L 378.5 145 Z  M 384.5 170 Q 390.8 168.1 389 173 L 375.5 175 L 376.5 173 L 384.5 170 Z  M 15.5 173 L 31 176 Q 32.4 180 25.5 178 L 14 174.5 L 15.5 173 Z  M 380.5 210 L 389.5 210 L 390 213 L 379.5 213 L 378 211.5 L 380.5 210 Z  M 12.5 211 L 29.5 211 L 30 213 L 13.5 214 L 11 212.5 L 12.5 211 Z  M 369 256 L 381 258 Q 382.8 262.5 377.5 261 L 369 258 L 369 256 Z  M 36.5 260 Q 42.4 258.3 41 262 L 24.5 267 Q 21 265 25.5 263 L 36.5 260 Z  M 57.5 297 L 60 297.5 L 45 306 L 47.5 302 L 57.5 297 Z  M 343 304 L 354 310.5 L 351.5 312 L 343 305.5 L 343 304 Z  M 81.5 326 L 84 327.5 L 71 338 L 75.5 331 L 81.5 326 Z  M 308 339 L 314 343.5 L 318 351 L 313 348.5 L 308 339 Z  M 120.5 353 L 122 355.5 L 114 369 Q 110.7 370.3 112 365.5 L 120.5 353 Z  M 266.5 362 L 272 372.5 L 269.5 374 Q 264.7 369.7 266.5 362 Z  M 176 371 Q 179 369.8 178 373.5 L 175 387 Q 170.9 388.7 172 384.5 L 176 371 Z  M 223.5 372 L 225 373.5 L 226 386.5 L 225 389 L 223 387.5 L 223 385.5 L 223.5 372 Z " fill="currentColor"></path>
+            </svg>
+            <button type="button" class="encoder-knob pointer" aria-label="Molette de réglage"></button>
+          </div>
+        </aside>      
+      </section>
+
+  <!-- bouton volume a modifier
+      <div class="jack-connector" aria-hidden="true">
+        <div class="jack-hole" id="jack-hole"></div>
+      </div> -->
+      <div class="container-faders-buttons">
+        <!-- ZONE INFÉRIEURE : 4 FADERS VERTICAUX -->
+        <div class="faders-section" role="group" aria-label="Faders">
+          <div class="faders-wrapper">
+            <!-- Fader 1 -->
+            <div class="fader" data-fader="1" aria-label="Fader 1">
+              <div class="fader-track" aria-hidden="true">
+                <div class="fader-handle pointer" role="slider" tabindex="0"
+                      aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                      aria-label="Poignée du fader 1"></div>
+              </div>
+            </div>
+
+            <!-- Fader 2 -->
+            <div class="fader" data-fader="2" aria-label="Fader 2">
+              <div class="fader-track" aria-hidden="true">
+                <div class="fader-handle pointer" role="slider" tabindex="0"
+                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                  aria-label="Poignée du fader 2"></div>
+              </div>
+            </div>
+
+            <!-- Fader 3 -->
+            <div class="fader" data-fader="3" aria-label="Fader 3">
+              <div class="fader-track" aria-hidden="true">
+                <div class="fader-handle pointer" role="slider" tabindex="0"
+                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                  aria-label="Poignée du fader 3"></div>
+              </div>
+            </div>
+
+            <!-- Fader 4 -->
+            <div class="fader" data-fader="4" aria-label="Fader 4">
+              <div class="fader-track" aria-hidden="true">
+                <div class="fader-handle pointer" role="slider" tabindex="0"
+                      aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                      aria-label="Poignée du fader 4"></div>
+              </div>
+            </div>
+          </div>
+        </div>    
+        
+        <!-- ZONE CENTRALE HAUTE : PETITE GRILLE DE BOUTONS (3 x 4) -->
+        <div class="nav-buttons" role="group" aria-label="Boutons de navigation">
+          <!-- 2 colonnes x 4 lignes (6 boutons) -->
+          <div class="nav-grid">
+            <button type="button" class="nav-btn pointer" data-nav="1" aria-label="Nav 1"></button>
+            <button type="button" class="nav-btn pointer" data-nav="2" aria-label="Nav 2"></button>
+            <button type="button" class="nav-btn pointer" data-nav="3" aria-label="Nav 3"></button>
+            <button type="button" class="nav-btn pointer" data-nav="4" aria-label="Nav 4"></button>
+            <button type="button" class="nav-btn pointer" data-nav="5" aria-label="Nav 5"></button>
+            <button type="button" class="nav-btn pointer" data-nav="6" aria-label="Nav 6"></button>
+          </div>
+        </div>      
+      </div>
+
+
+      <!-- BAS DE L'APPAREIL : bouton d'enregistrement, voyants, etc. -->
+      <div class="bottom-row" role="contentinfo" aria-label="Bas de l'appareil">
+        <div class="bottom-left">
+          <button type="button" class="large-rect-btn" aria-label="Bouton principal (enregistrement)">Welcome</button>
+        </div>
+
+        <div class="bottom-right">
+          <div class="status-mini" role="status" aria-label="Statut et port">
+            <div class="mini-led mini-led-red" aria-hidden="true"></div>
+            <div class="mini-led mini-led-grey" aria-hidden="true"></div>
+          </div>
+
+          <div class="tiny-switch pointer" role="switch" aria-checked="false" tabindex="0" aria-label="Petit interrupteur"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
