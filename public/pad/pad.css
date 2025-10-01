@@ -44,7 +44,7 @@ template {
 .pad-controller {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: 200px;
     min-height: max-content;
     background-color: #1a1a1a;
     color: #fff;
