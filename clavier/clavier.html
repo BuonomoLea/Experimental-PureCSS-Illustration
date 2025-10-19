@@ -1,7 +1,6 @@
 <template id="clavier-template">
   <!-- CLAVIER MIDI -->
   <div class="midi-keyboard" id="midi-keyboard" role="application" aria-label="Clavier MIDI">
-
     <!-- BANDEAU SUPÉRIEUR -->
     <div class="keyboard-top" role="contentinfo" aria-label="Partie supérieure">
 
@@ -72,35 +71,36 @@
         </div>         
       </div>
     </div>
-
     <!-- SECTION CLAVIER (touches blanches et noires) -->
     <div class="keys-section" role="region" aria-label="Touches du clavier">
-
-      <!-- Exemple avec 4 blanches et 3 noires -->
+      <!-- Touche blanches -->
       <div class="white-keys" role="group" aria-label="Touches blanches">
-        <button type="button" class="white-key pointer" data-key="C" aria-label="Do"></button>
-        <button type="button" class="white-key pointer" data-key="D" aria-label="Ré"></button>
-        <button type="button" class="white-key pointer" data-key="E" aria-label="Mi"></button>
-        <button type="button" class="white-key pointer" data-key="F" aria-label="Fa"></button>
-        <button type="button" class="white-key pointer" data-key="G" aria-label="Mi"></button>
-        <button type="button" class="white-key pointer" data-key="A" aria-label="Sol"></button>
-        <button type="button" class="white-key pointer" data-key="B" aria-label="La"></button>
-        <button type="button" class="white-key pointer" data-key="C" aria-label="Do"></button>
+        <!-- Octave 1 -->
+        <button type="button" class="white-key pointer" data-key="C" aria-label="Do">Do</button>
+        <button type="button" class="white-key pointer" data-key="D" aria-label="Ré">Ré</button>
+        <button type="button" class="white-key pointer" data-key="E" aria-label="Mi">Mi</button>
+        <button type="button" class="white-key pointer" data-key="F" aria-label="Fa">Fa</button>
+        <button type="button" class="white-key pointer" data-key="G" aria-label="Sol">Sol</button>
+        <button type="button" class="white-key pointer" data-key="A" aria-label="La">La</button>
+        <button type="button" class="white-key pointer" data-key="B" aria-label="Si">Si</button>
+        <!-- Octave 2 -->
+        <button type="button" class="white-key pointer" data-key="C2" aria-label="Do">Do</button>
       </div>
-
+      <!-- Touche noires -->
       <div class="black-keys" role="group" aria-label="Touches noires">
         <div class="black-keys-left">
-          <button type="button" class="black-key pointer" data-key="C#" aria-label="Do dièse"></button>
-          <button type="button" class="black-key pointer" data-key="D#" aria-label="Ré dièse"></button>
+          <button type="button" class="black-key pointer" data-key="C#" aria-label="Do dièse">Do♯</button>
+          <button type="button" class="black-key pointer" data-key="D#" aria-label="Ré dièse">Ré♯</button>
         </div>
         <div class="black-keys-mid">
-          <button type="button" class="black-key pointer" data-key="F#" aria-label="Fa dièse"></button>
+          <button type="button" class="black-key pointer" data-key="F#" aria-label="Fa dièse">Fa♯</button>
         </div>
         <div class="black-keys-right">
-          <button type="button" class="black-key pointer" data-key="A#" aria-label="Sol dièse"></button>
-          <button type="button" class="black-key pointer" data-key="B#" aria-label="La dièse"></button>        
+          <button type="button" class="black-key pointer" data-key="G#" aria-label="Sol dièse">Sol♯</button>
+          <button type="button" class="black-key pointer" data-key="A#" aria-label="La dièse">La♯</button>
         </div>
       </div>
+
     </div>
   </div>
 </template>

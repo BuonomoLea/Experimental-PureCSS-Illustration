@@ -48,6 +48,7 @@ template {
     border-bottom: 2px solid #000;
     padding: 1rem;
 }
+
 /* BANDEAU SUPÉRIEUR */
 .keyboard-top, .keys-section {
     width: calc(450px - 2rem);
@@ -62,6 +63,7 @@ template {
 }
 /* SECTION CLAVIER */
 .keys-section {
+    grid-area: keys-section;
     position: relative;
     height: 100%;
     width: 100%;
@@ -75,92 +77,7 @@ template {
     border-right: 1px solid #222;
     border-bottom: 1px solid #333;
     border-left: 1px solid #222;
-    overflow: hidden;
 }
-/* Touches blanches */
-.white-keys {
-    display: flex;
-    gap: 2px;
-    position: relative;
-    z-index: 1;
-}
-.white-key {
-    width: 40px;
-    height: 160px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 0 0 4px 4px;
-    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-                inset -1px -1px 2px rgba(0, 0, 0, 0.3),
-                1px 1px 2px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: #333;
-    padding-bottom: 6px;
-}
-.white-key:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3),
-        inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-        inset -1px -1px 4px rgba(255, 255, 255, 0.3),
-        inset 2px 2px 4px rgba(0, 0, 0, 0.2),
-        inset -1px -1px 4px rgba(0, 0, 0, 0.1),
-        2px 2px 2px rgba(0, 0, 0, 0.4);
-}
-/* Touches noires */
-.black-keys {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100px;
-  width: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-.black-key {
-    position: absolute;
-    top: 0;
-    width: 28px;
-    height: 100px;
-    background: #000;
-    border-radius: 0 0 4px 4px;
-    border: 1px solid #1a1a1a;
-    border-bottom: 1.5px solid #606060;
-    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1),
-        inset 1px 1px 2px rgba(0, 0, 0, 0.4),
-        -1px -1px 2px rgba(0, 0, 0, 0.3),
-        1px 1px 2px rgba(0, 0, 0, 0.3);
-    border-left: 1px solid #707070;
-    z-index: 2;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #eee;
-    padding-bottom: 4px;
-    pointer-events: auto;
-}
-.black-key:hover {
-  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
-    inset -1px -1px 2px rgba(0, 0, 0, 0.3),
-    1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-/* Positionnement des touches noires */
-.black-key[data-key="C#"] { left: 44px; }
-.black-key[data-key="D#"] { left: 86px; }
-.black-key[data-key="F#"] { left: 168px; }
-.black-key[data-key="G#"] { left: 210px; }
-.black-key[data-key="A#"] { left: 252px; }
-
-
-
 /* Boutons ronds */
 .top-round-buttons {
     display: grid;
@@ -366,4 +283,57 @@ template {
 }
 .rect-btn:hover {
     box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -2px -2px 2px rgba(0, 0, 0, 0.4), inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+/* Touches blanches */
+.white-keys {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+}
+.white-key {
+    width: 40px;
+    height: 100px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.white-key:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 4px rgba(255, 255, 255, 0.3), inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -1px -1px 4px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.4), 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+/* Touches noires */
+.black-keys {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    width: 92%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+}
+.black-keys-left, .black-keys-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 25%;
+}
+.black-key {
+    width: 24px;
+    height: 60px;
+    background: #000;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #1a1a1a;
+    border-bottom: 1.5px solid #606060;
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1), inset 1px 1px 2px rgba(0, 0, 0, 0.4), -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid #707070;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.black-key:hover {
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(0, 0, 0, 0.3), 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
