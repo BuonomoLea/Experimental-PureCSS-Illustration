@@ -2,6 +2,7 @@
 
 Ce projet est une illustration originale d’un synthétiseur et de son contrôleur, réalisée entièrement en CSS pur, sans images ni SVG.  
 Aucun dynamisme n'a été ajouté pour l'instant, mais des éléments interactifs le seront à terme.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open-2E0EF1)](https://buonomolea.github.io/Experimental-PureCSS-Illustration/)
 
 ## Sommaire
 
