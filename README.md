@@ -25,4 +25,4 @@ Les éléments sont intégrés à l'index à l'aide de **Web Components** pour p
 
 ## Licence
 
-Ce projet est **open-source**. N’hésitez pas à le cloner, le modifier ou le partager !
+Ce projet est **open-source**. N’hésitez pas à le cloner, y contribuer ou le partager !
